@@ -150,19 +150,13 @@ footer h3 {
 footer p {
   font-size: 0.8em;
 }
-footer.login-box h2 {
-  margin: 0 0 30px;
-  padding: 0;
-  color: var(--blanco);
-  text-align: center;
-}
 footer.login-box .user-box {
   position: relative;
 }
 footer.login-box .user-box input, footer.login-box .user-box textarea {
   width: 100%;
   padding: 10px 0;
-  font-size: 16px;
+  color: var(--blanco);
   margin-bottom: 30px;
   border: none;
   border-bottom: 1px solid var(--blanco);
@@ -174,10 +168,15 @@ footer.login-box .user-box label {
   top: 0;
   left: 0;
   padding: 10px 0;
-  font-size: 16px;
-  color: var(--gris);
+  font-size: 0.9em;
+  color: #808080;
   pointer-events: none;
   transition: 0.5s;
+}
+footer.login-box .user-box textarea {
+  resize: none;
+  /* height: 250px; */
+  font-family: inherit;
 }
 footer.login-box .user-box input:focus ~ label,
 footer.login-box .user-box input:valid ~ label,

@@ -166,12 +166,6 @@ footer {
     font-size: 0.8em;
   }
   &.login-box {
-    h2 {
-      margin: 0 0 30px;
-      padding: 0;
-      color: $white;
-      text-align: center;
-    }
   
     .user-box {
       position: relative;
@@ -179,8 +173,8 @@ footer {
       input, textarea {
         width: 100%;
         padding: 10px 0;
-        font-size: 16px;
         
+        color: $white;
         margin-bottom: 30px;
         border: none;
         border-bottom: 1px solid $white;
@@ -193,10 +187,15 @@ footer {
         top: 0;
         left: 0;
         padding: 10px 0;
-        font-size: 16px;
-        color: $gray;
+        font-size: 0.9em;
+        color: #808080;
         pointer-events: none;
         transition: 0.5s;
+      }
+      textarea{
+        resize: none;
+        /* height: 250px; */
+        font-family: inherit;
       }
   
       input:focus ~ label,
