@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+:root {
+  --amarillo: #ffc300;
+  --amarillo-oscuro: #c79900;
+  --negro: #000000;
+  --gris: #e6e6e6;
+  --blanco: #ffffff;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  height: 100dvb;
+}
+
+strong {
+  font-weight: 800;
+}
+
+/* Menu */
+nav {
+  display: none;
+}
+
+/* Header */
+.wrap {
+  overflow: hidden;
+  padding-bottom: 65px;
+}
+
+header {
+  background-color: var(--gris);
+  position: relative;
+  padding-bottom: 60px;
+}
+header .imgHero {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 96%);
+          clip-path: polygon(0 0, 100% 0, 100% 80%, 0 96%);
+}
+header .imgHero img {
+  width: 100%;
+}
+header .logo {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 225px;
+  z-index: 10;
+}
+header .logo img {
+  width: 100%;
+}
+header::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+  height: 60px;
+  background-color: var(--gris);
+  border-bottom: var(--amarillo) 3px solid;
+  transform: translate(0, 0px) rotate(7deg) scaleX(1.2);
+}
+
+/* Articles */
+article .txt {
+  padding: 0 20px;
+}
+article .txt h2 {
+  color: var(--blanco);
+  background-color: var(--negro);
+  padding: 7px 15px;
+  margin-right: -20px;
+  font-size: 0.8em;
+  font-weight: 100;
+}
+article .txt p {
+  font-size: 0.8em;
+}
+article.marco {
+  border: 2px solid var(--negro);
+  margin: 20px;
+}
+article.marco h2 {
+  margin-left: -42px;
+  margin-top: 20px;
+  padding-inline: 42px;
+}
+
+.artiFlex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.artiFlex.part1 {
+  margin-top: -44px;
+}
+.artiFlex.part1 .logoAbog {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.artiFlex.part1 .logoAbog img {
+  display: block;
+  margin-left: -110px;
+  position: relative;
+}
+.artiFlex.part1 .logoAbog::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 2px;
+  height: 50px;
+  background-color: var(--amarillo);
+  top: -14px;
+  left: calc(50% - 47px);
+  z-index: -1;
+}
+.artiFlex.part1 .logoAbog::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: calc(50dvw - 48px);
+  height: 14.5px;
+  background-color: var(--negro);
+  bottom: 31px;
+  left: calc(50% - 50dvw);
+  z-index: -1;
+}
+.artiFlex.part1 .logoAbog h1 {
+  font-size: 0.63em;
+}
+
+/* Footer */
+footer {
+  background-color: var(--negro);
+  color: var(--blanco);
+  padding: 80px 20px 0;
+  -webkit-clip-path: polygon(0 24%, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 24%, 100% 0, 100% 100%, 0% 100%);
+}
+footer .logoAbog {
+  text-align: center;
+}
+footer h3 {
+  font-size: 1em;
+}
+footer p {
+  font-size: 0.8em;
+}
+footer.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: var(--blanco);
+  text-align: center;
+}
+footer.login-box .user-box {
+  position: relative;
+}
+footer.login-box .user-box input, footer.login-box .user-box textarea {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid var(--blanco);
+  outline: none;
+  background: transparent;
+}
+footer.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: var(--gris);
+  pointer-events: none;
+  transition: 0.5s;
+}
+footer.login-box .user-box input:focus ~ label,
+footer.login-box .user-box input:valid ~ label,
+footer.login-box .user-box textarea:focus ~ label,
+footer.login-box .user-box textarea:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: var(--amarillo);
+  font-size: 12px;
+}/*# sourceMappingURL=main.css.map */

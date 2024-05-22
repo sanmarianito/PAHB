@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+$amarillo: #ffc300;
+$amarillo-oscuro: #c79900;
+$negro: #000000;
+$gris: #e6e6e6;
+$blanco: #ffffff;
+
+:root {
+  --amarillo: #{$amarillo};
+  --amarillo-oscuro: #{$amarillo-oscuro};
+  --negro: #{$negro};
+  --gris: #{$gris};
+  --blanco: #{$blanco};
+}
+$yellow: var(--amarillo);
+$yellow-dark: var(--amarillo-oscuro);
+$black: var(--negro);
+$gray: var(--gris);
+$white: var(--blanco);
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  height: 100dvb;
+}
+
+strong {
+  font-weight: 800;
+}
+
+/* Menu */
+nav {
+  display: none;
+}
+
+/* Header */
+.wrap {
+  overflow: hidden;
+  padding-bottom: 65px;
+}
+header {
+  background-color: $gray;
+  position: relative;
+  padding-bottom: 60px;
+
+  .imgHero {
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 96%);
+    img {
+      width: 100%;
+    }
+  }
+  .logo {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 225px;
+    z-index: 10;
+    img {
+      width: 100%;
+    }
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+    height: 60px;
+    background-color: $gray;
+    border-bottom: $yellow 3px solid;
+    transform: translate(0, 0px) rotate(7deg) scaleX(1.2);
+  }
+}
+
+/* Articles */
+article {
+  .txt {
+    padding: 0 20px;
+    h2 {
+      color: $white;
+      background-color: $black;
+      padding: 7px 15px;
+      margin-right: -20px;
+      font: {
+        size: 0.8em;
+        weight: 100;
+      }
+    }
+    p {
+      font-size: 0.8em;
+    }
+  }
+  &.marco {
+    border: 2px solid $black;
+    margin: 20px;
+    h2 {
+      margin: {
+        left: -42px;
+        top: 20px;
+      }
+      padding-inline: 42px;
+    }
+  }
+}
+.artiFlex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &.part1 {
+    margin-top: -44px;
+    .logoAbog {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img {
+        display: block;
+        margin-left: -110px;
+        position: relative;
+      }
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 2px;
+        height: 50px;
+        background-color: $yellow;
+        top: -14px;
+        left: calc(50% + -47px);
+        z-index: -1;
+      }
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: calc(50dvw - 48px);
+        height: 14.5px;
+        background-color: $black;
+        bottom: 31px;
+        left: calc(50% - 50dvw);
+        z-index: -1;
+      }
+      h1 {
+        font-size: 0.63em;
+      }
+    }
+  }
+}
+
+/* Footer */
+footer {
+  background-color: $black;
+  color: $white;
+  padding: 80px 20px 0;
+  clip-path: polygon(0 24%, 100% 0, 100% 100%, 0% 100%);
+
+  .logoAbog {
+    text-align: center;
+  }
+  h3 {
+    font-size: 1em;
+  }
+  p {
+    font-size: 0.8em;
+  }
+  &.login-box {
+    h2 {
+      margin: 0 0 30px;
+      padding: 0;
+      color: $white;
+      text-align: center;
+    }
+  
+    .user-box {
+      position: relative;
+  
+      input, textarea {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        
+        margin-bottom: 30px;
+        border: none;
+        border-bottom: 1px solid $white;
+        outline: none;
+        background: transparent;
+      }
+  
+      label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px 0;
+        font-size: 16px;
+        color: $gray;
+        pointer-events: none;
+        transition: 0.5s;
+      }
+  
+      input:focus ~ label,
+      input:valid ~ label,
+      textarea:focus ~ label,
+      textarea:valid ~ label {
+        top: -20px;
+        left: 0;
+        color: $yellow;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+
