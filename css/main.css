@@ -137,9 +137,20 @@ article.marco h2 {
 footer {
   background-color: var(--negro);
   color: var(--blanco);
-  padding: 80px 20px 0;
-  -webkit-clip-path: polygon(0 24%, 100% 0, 100% 100%, 0% 100%);
-          clip-path: polygon(0 24%, 100% 0, 100% 100%, 0% 100%);
+  padding: 80px 48px 0 20px;
+  -webkit-clip-path: polygon(0 60px, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 60px, 100% 0, 100% 100%, 0% 100%);
+  position: relative;
+}
+footer::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 28px;
+  height: calc(100% - 220px);
+  background-color: var(--amarillo);
+  bottom: 0;
+  right: 0;
 }
 footer .logoAbog {
   text-align: center;
@@ -153,7 +164,8 @@ footer p {
 footer.login-box .user-box {
   position: relative;
 }
-footer.login-box .user-box input, footer.login-box .user-box textarea {
+footer.login-box .user-box input,
+footer.login-box .user-box textarea {
   width: 100%;
   padding: 10px 0;
   color: var(--blanco);
@@ -162,6 +174,7 @@ footer.login-box .user-box input, footer.login-box .user-box textarea {
   border-bottom: 1px solid var(--blanco);
   outline: none;
   background: transparent;
+  transition: 0.5s ease-in all;
 }
 footer.login-box .user-box label {
   position: absolute;
@@ -175,15 +188,92 @@ footer.login-box .user-box label {
 }
 footer.login-box .user-box textarea {
   resize: none;
-  /* height: 250px; */
   font-family: inherit;
 }
 footer.login-box .user-box input:focus ~ label,
 footer.login-box .user-box input:valid ~ label,
 footer.login-box .user-box textarea:focus ~ label,
 footer.login-box .user-box textarea:valid ~ label {
-  top: -20px;
+  top: -28px;
   left: 0;
   color: var(--amarillo);
   font-size: 12px;
+}
+footer.login-box input[type=submit] {
+  display: block;
+  background-color: var(--amarillo);
+  border: none;
+  color: var(--negro);
+  padding: 10px 35px;
+  cursor: pointer;
+  border-radius: 50px;
+  margin-inline: auto;
+  font-weight: 800;
+  font-size: 1em;
+}
+footer.login-box input:-internal-autofill-selected {
+  margin-bottom: 30px;
+  padding-inline: 8px;
+  width: calc(100% - 16px);
+}
+footer .contact {
+  margin-top: 40px;
+}
+footer .contact .item {
+  display: flex;
+  align-items: center;
+  font-size: 0.7em;
+  font-weight: 300;
+}
+footer .contact .item:first-child {
+  font-size: 0.9em;
+}
+footer .contact .item .icon {
+  display: flex;
+  aspect-ratio: 1/1;
+  justify-content: center;
+  align-items: center;
+  width: 33px;
+}
+footer .contact .item a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.5s ease-in all;
+}
+footer .contact .item a:hover {
+  color: var(--amarillo);
+}
+footer .sublogo {
+  margin: 40px -20px;
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+footer .sublogo p {
+  font-weight: 600;
+  margin-top: 0;
+}
+
+.ws {
+  width: 47px;
+  position: fixed;
+  bottom: 20px;
+  right: 5px;
+}
+
+.reveal-item {
+  animation: linear reveal both;
+  animation-timeline: view();
+  animation-range: entry 120% cover 30%;
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    /* translate: 100px; */
+  }
+  100% {
+    opacity: 1;
+    /* translate: 0 0; */
+  }
 }/*# sourceMappingURL=main.css.map */
