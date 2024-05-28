@@ -32,7 +32,154 @@ strong {
 
 /* Menu */
 nav {
-  display: none;
+  #burger-toggle {
+    display: none;
+  }
+
+  .burger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+
+    .line {
+      background-color: $black;
+      width: 30px;
+      height: 3px;
+      border-radius: 10px;
+      box-sizing: content-box;
+      outline: 2px solid #ffc40074;
+      transition: 0.5s ease-in all;
+
+    }
+  }
+
+  input[type="checkbox"]:checked {
+    ~label.burger-menu::before {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 100dvh;
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
+
+    ~.burger-menu .line {
+      outline: none;
+
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 7px);
+      }
+
+      &:nth-child(2) {
+        transform: scaleX(0);
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -8px);
+      }
+    }
+
+    ~.menu {
+      display: block;
+      width: calc(100% - 80px);
+
+      li.menu-nav-item {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  .menu {
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    right: 0;
+    width: 0px;
+    height: 100dvh;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(11.5px);
+
+    overflow: hidden;
+    box-sizing: content-box;
+    transition: 0.5s ease-in all;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 3px;
+      height: 100dvb;
+      background-color: $black;
+      bottom: 0;
+      left: 0;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 3px;
+      height: 30dvb;
+      background-color: $yellow;
+      bottom: 0;
+      left: 0;
+    }
+
+    ul.menu-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: $black;
+        top: 0;
+        left: 0;
+        clip-path: polygon(0 0, 0 100%, 100% 0);
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        background-color: $yellow;
+        bottom: 0;
+        right: 0;
+        clip-path: polygon(100% 0, 0 100%, 100% 100%);
+      }
+
+      li.menu-nav-item {
+        transform: translateX(200%);
+        transition: all 0.5s ease-in-out;
+      }
+
+      a.menu-nav-link {
+        text-decoration: none;
+        color: inherit;
+        font-size: clamp(1.5em, 3vw, 1.7em);
+      }
+    }
+  }
+
+
 }
 
 /* Header */
@@ -67,6 +214,17 @@ header {
     }
   }
 
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -33px;
+    width: 100%;
+    height: 60px;
+    background-color: $yellow;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+  }
+
   &::after {
     content: "";
     display: block;
@@ -75,8 +233,7 @@ header {
     width: 100%;
     height: 60px;
     background-color: $gray;
-    border-bottom: $yellow 3px solid;
-    transform: translate(0, 0px) rotate(7deg) scaleX(1.2);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
   }
 }
 
@@ -90,14 +247,30 @@ article {
       background-color: $black;
       padding: 7px 15px;
       margin-right: -20px;
+      
 
       font: {
         size: 0.8em;
         weight: 100;
       }
     }
+    h3 {
+      color: $black;
+      background-color: $yellow;
+      padding: 7px 15px;
+      margin-right: -20px;
+      span{
+        display: block;
+        color: $white;
+        background-color: $black;
+      }
+      font: {
+        size: 0.8em;
+        weight:100;
+      }
+    }
 
-    p {
+    p, li {
       font-size: 0.8em;
     }
   }
@@ -110,6 +283,7 @@ article {
       margin: {
         left: -42px;
         top: 20px;
+        
       }
 
       padding-inline: 42px;
@@ -163,6 +337,10 @@ article {
 
       h1 {
         font-size: 0.63em;
+
+        br {
+          display: none;
+        }
       }
     }
   }
@@ -172,11 +350,23 @@ article {
 footer {
   background-color: $black;
   color: $white;
-  padding: 80px 48px 0 20px;
-  clip-path: polygon(0 60px, 100% 0, 100% 100%, 0% 100%);
+  padding: 44px 48px 0 20px;
+  margin-top: 69px;
   position: relative;
 
-  &::before{
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    clip-path: polygon(0 60px, 100% 0, 100% 100%, 0% 100%);
+    width: 100%;
+    height: 60px;
+    background-color: $black;
+    top: -59px;
+    left: 0px;
+  }
+
+  &::before {
     content: "";
     display: block;
     position: absolute;
@@ -185,10 +375,6 @@ footer {
     background-color: $yellow;
     bottom: 0;
     right: 0;
-  }
-
-  .logoAbog {
-    text-align: center;
   }
 
   h3 {
@@ -208,7 +394,6 @@ footer {
       textarea {
         width: 100%;
         padding: 10px 0;
-
         color: $white;
         margin-bottom: 30px;
         border: none;
@@ -264,22 +449,23 @@ footer {
       width: calc(100% - 16px);
     }
   }
+
   .contact {
     margin-top: 40px;
-  
+
     .item {
       display: flex;
       align-items: center;
-  
+
       &:first-child {
         font-size: 0.9em;
       }
-  
+
       font: {
         size: 0.7em;
         weight: 300;
       }
-  
+
       .icon {
         display: flex;
         aspect-ratio: 1 / 1;
@@ -287,24 +473,25 @@ footer {
         align-items: center;
         width: 33px;
       }
-  
+
       a {
         text-decoration: none;
         color: inherit;
         transition: 0.5s ease-in all;
-  
+
         &:hover {
           color: $yellow;
         }
       }
     }
   }
-  
+
   .sublogo {
     margin: 40px -20px;
     display: flex;
     column-gap: 10px;
-    p{
+
+    p {
       font-weight: 600;
       margin-top: 0;
     }
@@ -314,7 +501,7 @@ footer {
 
 .ws {
   width: 47px;
-  position:fixed;
+  position: fixed;
   bottom: 20px;
   right: 5px;
 }
@@ -322,16 +509,19 @@ footer {
 .reveal-item {
   animation: linear reveal both;
   animation-timeline: view();
-  animation-range: entry 120% cover 30%;
+  animation-range: entry 10dvh cover 30%;
 }
 
 @keyframes reveal {
   0% {
     opacity: 0;
-    /* translate: 100px; */
+    transform: translateY(100px);
   }
+
   100% {
     opacity: 1;
-    /* translate: 0 0; */
+    transform: translateY(0px);
   }
 }
+@import "asesoria";
+@import "media";

@@ -20,23 +20,3 @@ function getScrollHeight(elm){
   
   // global delegated event listener
   document.addEventListener('input', onExpandableTextareaInput)
-  
-  
-  
-  
-  // OLD SOLUTION USING JQUERY:
-  // // Applied globally on all textareas with the "autoExpand" class
-  
-  // $(document)
-  //     .one('focus.autoExpand', 'textarea.autoExpand', function(){
-  //         var savedValue = this.value;
-  //         this.value = '';
-  //         this._baseScrollHeight = this.scrollHeight;
-  //         this.value = savedValue;
-  //     })
-  //     .on('input.autoExpand', 'textarea.autoExpand', function(){
-  //         var minRows = this.getAttribute('data-min-rows')|0, rows;
-  //         this.rows = minRows;
-  //         rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 16);
-  //         this.rows = minRows + rows;
-  //     });
