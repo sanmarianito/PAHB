@@ -286,7 +286,7 @@ article.marco h2 {
   width: calc(50dvw - 48px);
   height: 14.5px;
   background-color: var(--negro);
-  bottom: 31px;
+  bottom: 35px;
   left: calc(50% - 50dvw);
   z-index: -1;
 }
