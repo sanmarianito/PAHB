@@ -28,6 +28,11 @@
     }
 
     /* Menu */
+    .nav--hidden {
+        transform: translateY(calc(-1 * 70px));
+        box-shadow: none;
+    }
+
     nav {
         .burger-menu {
             display: none;
@@ -38,7 +43,7 @@
             height: 70px;
             background: rgba(0, 0, 0, 0.6);
             color: $white;
-            transition: none;
+            transition: transform 0.5s ease-in-out;
 
             &::before {
                 display: none;
@@ -409,6 +414,7 @@
     body.servicios {
         header {
             background-color: $blanco;
+
             .imgHero {
                 height: 590px;
 
@@ -427,17 +433,18 @@
                     }
                 }
             }
+
             .logo {
                 margin-top: -27px;
                 position: relative;
-    
+
                 img {
                     width: 160px;
                 }
             }
         }
 
-        
+
 
         article {
             .block {

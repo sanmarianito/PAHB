@@ -1,4 +1,5 @@
-function getScrollHeight(elm){
+// agregar línea al escribir
+function getScrollHeight(elm) {
     var savedValue = elm.value
     elm.value = ''
     elm._baseScrollHeight = elm.scrollHeight
@@ -19,4 +20,21 @@ function getScrollHeight(elm){
   
   
   // global delegated event listener
-  document.addEventListener('input', onExpandableTextareaInput)
+document.addEventListener('input', onExpandableTextareaInput)
+  
+
+//Esconder Menu con Scroll
+{
+  const nav = document.querySelector(".menu");
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener("scroll", () => {
+    if (lastScrollY < window.scrollY) {
+      nav.classList.add("nav--hidden");
+    } else {
+      nav.classList.remove("nav--hidden");
+    }
+
+    lastScrollY = window.scrollY;
+  });
+}

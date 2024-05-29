@@ -662,6 +662,10 @@ body.servicios article .txt ul li {
     z-index: 10;
   }
   /* Menu */
+  .nav--hidden {
+    transform: translateY(-70px);
+    box-shadow: none;
+  }
   nav .burger-menu {
     display: none;
   }
@@ -670,7 +674,7 @@ body.servicios article .txt ul li {
     height: 70px;
     background: rgba(0, 0, 0, 0.6);
     color: var(--blanco);
-    transition: none;
+    transition: transform 0.5s ease-in-out;
   }
   nav .menu::before {
     display: none;
