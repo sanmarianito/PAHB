@@ -548,10 +548,11 @@ body.asesoria footer {
 }
 
 body.servicios .wrap {
-  padding-bottom: 30px;
+  padding-bottom: 0px;
 }
 body.servicios header {
   padding-bottom: 0;
+  background-color: #ffffff;
 }
 body.servicios header .imgHero {
   -webkit-clip-path: none;
@@ -602,10 +603,12 @@ body.servicios header .imgHero h1 strong {
 body.servicios header::before, body.servicios header::after {
   display: none;
 }
-body.servicios .logo {
+body.servicios header .logo {
   text-align: center;
+  position: relative;
+  margin-top: 24px;
 }
-body.servicios .logo img {
+body.servicios header .logo img {
   width: 100px;
 }
 body.servicios .container {
@@ -761,11 +764,6 @@ body.servicios article .txt ul li {
   article.marco {
     margin: auto;
   }
-  article .column2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-  }
   .artiFlex {
     flex-direction: row;
   }
@@ -880,6 +878,12 @@ body.servicios article .txt ul li {
     right: 32px;
     z-index: 9999;
   }
+  /* ----aux---- */
+  .column2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
   /* ASESORIA */
   body.asesoria header .imgHero {
     height: 570px;
@@ -938,5 +942,51 @@ body.servicios article .txt ul li {
   }
   body.asesoria footer::before {
     height: calc(100% + 490px);
+  }
+  /* SERVICIOS */
+  body.servicios header {
+    background-color: #ffffff;
+  }
+  body.servicios header .imgHero {
+    height: 590px;
+  }
+  body.servicios header .imgHero h1 span {
+    font-size: 1.8em;
+    width: 100%;
+    max-width: 400px;
+    bottom: 127px;
+  }
+  body.servicios header .imgHero h1 strong {
+    font-size: 0.95em;
+    bottom: 99px;
+    max-width: 570px;
+  }
+  body.servicios header .logo {
+    margin-top: -27px;
+    position: relative;
+  }
+  body.servicios header .logo img {
+    width: 160px;
+  }
+  body.servicios article .block::before {
+    content: "";
+    display: block;
+    width: 50vw;
+    height: 100%;
+    background-color: var(--amarillo);
+    position: absolute;
+    bottom: 0px;
+    z-index: -1;
+  }
+  body.servicios article .txt:nth-child(even) .block::before {
+    left: 0;
+    background-color: var(--amarillo);
+  }
+  body.servicios article .txt:nth-child(odd) .block::before {
+    right: 0;
+    background-color: var(--amarillo);
+  }
+  body.servicios footer::before {
+    height: calc(100% + 830px);
   }
 }/*# sourceMappingURL=main.css.map */

@@ -160,11 +160,7 @@
             margin: auto;
         }
 
-        .column2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-        }
+
     }
 
     .artiFlex {
@@ -315,6 +311,14 @@
         z-index: 9999;
     }
 
+    /* ----aux---- */
+    .column2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+
     /* ASESORIA */
     body.asesoria {
         header {
@@ -344,8 +348,9 @@
                 }
             }
         }
-        .container{
-            &::before{        
+
+        .container {
+            &::before {
                 width: 55px;
                 height: calc(100% - 220px);
                 top: -65px;
@@ -392,8 +397,76 @@
 
         footer {
             margin-top: -20px;
-            &::before{
+
+            &::before {
                 height: calc(100% + 490px);
+            }
+        }
+    }
+
+    /* SERVICIOS */
+
+    body.servicios {
+        header {
+            background-color: $blanco;
+            .imgHero {
+                height: 590px;
+
+                h1 {
+                    span {
+                        font-size: 1.8em;
+                        width: 100%;
+                        max-width: 400px;
+                        bottom: 127px;
+                    }
+
+                    strong {
+                        font-size: 0.95em;
+                        bottom: 99px;
+                        max-width: 570px;
+                    }
+                }
+            }
+            .logo {
+                margin-top: -27px;
+                position: relative;
+    
+                img {
+                    width: 160px;
+                }
+            }
+        }
+
+        
+
+        article {
+            .block {
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 50vw;
+                    height: 100%;
+                    background-color: $yellow;
+                    position: absolute;
+                    bottom: 0px;
+                    z-index: -1;
+                }
+            }
+
+            .txt:nth-child(even) .block::before {
+                left: 0;
+                background-color: $yellow;
+            }
+
+            .txt:nth-child(odd) .block::before {
+                right: 0;
+                background-color: $yellow;
+            }
+        }
+
+        footer {
+            &::before {
+                height: calc(100% + 830px);
             }
         }
     }
