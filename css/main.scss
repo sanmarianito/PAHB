@@ -196,7 +196,7 @@ header {
   .imgHero {
     clip-path: polygon(0 0, 100% 0, 100% 80%, 0 96%);
 
-    img {
+    img, video {
       width: 100%;
     }
   }
