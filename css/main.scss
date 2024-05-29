@@ -247,13 +247,14 @@ article {
       background-color: $black;
       padding: 7px 15px;
       margin-right: -20px;
-      
+
 
       font: {
         size: 0.8em;
         weight: 100;
       }
     }
+
     h3 {
       color: $black;
       background-color: $yellow;
@@ -261,7 +262,8 @@ article {
       margin-right: -20px;
       position: relative;
       margin-bottom: 30px;
-      span{
+
+      span {
         display: block;
         color: $white;
         background-color: $black;
@@ -269,20 +271,22 @@ article {
         bottom: -15px;
         left: 0;
         padding: 2px 15px;
-        
+
         font: {
-          weight:800;
-          size:0.8em;
+          weight: 800;
+          size: 0.8em;
         }
 
       }
+
       font: {
         size: 0.8em;
-        weight:100;
+        weight: 100;
       }
     }
 
-    p, li {
+    p,
+    li {
       font-size: 0.8em;
     }
   }
@@ -295,7 +299,7 @@ article {
       margin: {
         left: -42px;
         top: 20px;
-        
+
       }
 
       padding-inline: 42px;
@@ -537,5 +541,7 @@ footer {
     transform: translateY(0px);
   }
 }
+
 @import "asesoria";
+@import "servicios";
 @import "media";
