@@ -52,7 +52,7 @@ nav {
       border-radius: 10px;
       box-sizing: content-box;
       outline: 2px solid #ffc40074;
-      transition: 0.5s ease-in all;
+      transition: 0.5s ease-out all;
 
     }
   }
@@ -107,7 +107,7 @@ nav {
 
     overflow: hidden;
     box-sizing: content-box;
-    transition: 0.5s ease-in all;
+    transition: 0.5s ease all;
 
     &::before {
       content: "";
@@ -259,10 +259,22 @@ article {
       background-color: $yellow;
       padding: 7px 15px;
       margin-right: -20px;
+      position: relative;
+      margin-bottom: 30px;
       span{
         display: block;
         color: $white;
         background-color: $black;
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+        padding: 2px 15px;
+        
+        font: {
+          weight:800;
+          size:0.8em;
+        }
+
       }
       font: {
         size: 0.8em;

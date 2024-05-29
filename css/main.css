@@ -37,7 +37,7 @@ nav .burger-menu .line {
   border-radius: 10px;
   box-sizing: content-box;
   outline: 2px solid rgba(255, 196, 0, 0.4549019608);
-  transition: 0.5s ease-in all;
+  transition: 0.5s ease-out all;
 }
 nav input[type=checkbox]:checked ~ label.burger-menu::before {
   content: "";
@@ -80,7 +80,7 @@ nav .menu {
           backdrop-filter: blur(11.5px);
   overflow: hidden;
   box-sizing: content-box;
-  transition: 0.5s ease-in all;
+  transition: 0.5s ease all;
 }
 nav .menu::before {
   content: "";
@@ -216,6 +216,8 @@ article .txt h3 {
   background-color: var(--amarillo);
   padding: 7px 15px;
   margin-right: -20px;
+  position: relative;
+  margin-bottom: 30px;
   font-size: 0.8em;
   font-weight: 100;
 }
@@ -223,6 +225,12 @@ article .txt h3 span {
   display: block;
   color: var(--blanco);
   background-color: var(--negro);
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  padding: 2px 15px;
+  font-weight: 800;
+  font-size: 0.8em;
 }
 article .txt p, article .txt li {
   font-size: 0.8em;
@@ -493,8 +501,44 @@ body.asesoria header .logosImg .logo img {
 body.asesoria header .logosImg h1 {
   display: none;
 }
+body.asesoria .container {
+  position: relative;
+  padding-left: 40px;
+}
+body.asesoria .container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 100%;
+  background-color: var(--negro);
+  top: -21px;
+  left: 0;
+  z-index: 1;
+}
+body.asesoria .container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 90%;
+  background-color: var(--amarillo);
+  bottom: -80px;
+  left: 0;
+  z-index: 1;
+}
+body.asesoria .txt h3 {
+  margin-left: -20px;
+  padding-left: 30px;
+}
+body.asesoria .txt h3 span {
+  padding-left: 30px;
+}
 body.asesoria .txt ul {
   padding-left: 20px;
+}
+body.asesoria footer {
+  z-index: 1;
 }
 
 @media screen and (min-width: 971px) {
