@@ -655,11 +655,11 @@ body.servicios article .txt ul li {
     display: block;
     position: absolute;
     width: 55px;
-    height: 653px;
     background-color: var(--negro);
-    bottom: -482px;
     left: 0;
     z-index: 10;
+    height: 803px;
+    bottom: -742px;
   }
   /* Menu */
   .nav--hidden {
