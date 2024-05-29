@@ -284,7 +284,10 @@ article {
         weight: 100;
       }
     }
+ul{
+  padding-left: 20px;
 
+}
     p,
     li {
       font-size: 0.8em;
@@ -527,7 +530,7 @@ footer {
 .reveal-item {
   animation: linear reveal both;
   animation-timeline: view();
-  animation-range: entry 10dvh cover 30%;
+  animation-range: entry 20dvh cover 30%;
 }
 
 @keyframes reveal {

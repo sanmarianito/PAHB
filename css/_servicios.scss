@@ -1,6 +1,10 @@
-body.servicios{
-    header{
+body.servicios {
+    .wrap {
+        padding-bottom: 30px;
+    }
+    header {
         padding-bottom: 0;
+
         .imgHero {
             clip-path: none;
             height: 300px;
@@ -12,37 +16,78 @@ body.servicios{
                 object-position: top center;
                 position: relative;
             }
-            h1{
-                position: absolute;
+
+            h1 {
                 font-size: 0.9em;
-                font-weight: 100;
-                color: $white;
-                background-color: $black;
-                padding: 5px;
                 text-align: center;
-                bottom: 0;
-                min-width: 250px;
-                left: 50%;
-                transform: translateX(-50%);
-                span{
+                position: relative;
+
+                span {
                     display: block;
-                    font-size: 0.7em;
-                    font-weight: 600;
+                    font-size: 1em;
+                    font-weight: 100;
                     position: absolute;
-                    width: 100dvw;
-                    color: $black;
-                    background-color: $blanco;
+                    min-width: 250px;
+                    color: $white;
+                    background-color: $black;
                     left: 50%;
-                    bottom: 0;
+                    bottom: 50px;
                     transform: translateX(-50%);
-                    z-index: -5;
-                    padding: 15px 20px 5px ;
+                    padding: 5px 20px;
+                    z-index: 2;
                 }
+
+                strong {
+                    display: block;
+                    position: absolute;
+                    font-size: 0.75em;
+                    font-weight: 600;
+                    color: $black;
+                    background-color: $white;
+                    padding: 15px 20px 5px;
+                    bottom: 30px;
+                    width: 100dvw;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
             }
         }
+
         &::before,
         &::after {
             display: none;
+        }
+    }
+    .logo{
+        text-align: center;
+        img{
+            width: 100px;
+        }
+    }
+
+    .container {
+        padding-top: 10px;
+    }
+
+    article {
+        margin-bottom: 90px;
+        .txt {
+            margin-bottom: 30px;
+            h3{
+                margin-bottom: 10px;
+                font-weight: 600;              
+            }
+            &:nth-child(even) h3{
+                margin-inline: -20px 0px;
+                padding-inline: 37px 20px;
+            }
+            ul{
+                margin: 0;
+                li{
+                    font-size: 0.7em;
+                }
+            }
         }
     }
 }

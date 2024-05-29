@@ -232,6 +232,9 @@ article .txt h3 span {
   font-weight: 800;
   font-size: 0.8em;
 }
+article .txt ul {
+  padding-left: 20px;
+}
 article .txt p,
 article .txt li {
   font-size: 0.8em;
@@ -435,7 +438,7 @@ footer .sublogo p {
 .reveal-item {
   animation: linear reveal both;
   animation-timeline: view();
-  animation-range: entry 10dvh cover 30%;
+  animation-range: entry 20dvh cover 30%;
 }
 
 @keyframes reveal {
@@ -540,13 +543,13 @@ body.asesoria .txt h3 {
 body.asesoria .txt h3 span {
   padding-left: 30px;
 }
-body.asesoria .txt ul {
-  padding-left: 20px;
-}
 body.asesoria footer {
   z-index: 1;
 }
 
+body.servicios .wrap {
+  padding-bottom: 30px;
+}
 body.servicios header {
   padding-bottom: 0;
 }
@@ -565,34 +568,68 @@ body.servicios header .imgHero img {
   position: relative;
 }
 body.servicios header .imgHero h1 {
-  position: absolute;
   font-size: 0.9em;
-  font-weight: 100;
-  color: var(--blanco);
-  background-color: var(--negro);
-  padding: 5px;
   text-align: center;
-  bottom: 0;
-  min-width: 250px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
 }
 body.servicios header .imgHero h1 span {
   display: block;
-  font-size: 0.7em;
-  font-weight: 600;
+  font-size: 1em;
+  font-weight: 100;
   position: absolute;
-  width: 100dvw;
-  color: var(--negro);
-  background-color: #ffffff;
+  min-width: 250px;
+  color: var(--blanco);
+  background-color: var(--negro);
   left: 50%;
-  bottom: 0;
+  bottom: 50px;
   transform: translateX(-50%);
-  z-index: -5;
+  padding: 5px 20px;
+  z-index: 2;
+}
+body.servicios header .imgHero h1 strong {
+  display: block;
+  position: absolute;
+  font-size: 0.75em;
+  font-weight: 600;
+  color: var(--negro);
+  background-color: var(--blanco);
   padding: 15px 20px 5px;
+  bottom: 30px;
+  width: 100dvw;
+  left: 50%;
+  transform: translateX(-50%);
 }
 body.servicios header::before, body.servicios header::after {
   display: none;
+}
+body.servicios .logo {
+  text-align: center;
+}
+body.servicios .logo img {
+  width: 100px;
+}
+body.servicios .container {
+  padding-top: 10px;
+}
+body.servicios article {
+  margin-bottom: 90px;
+}
+body.servicios article .txt {
+  margin-bottom: 30px;
+}
+body.servicios article .txt h3 {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+body.servicios article .txt:nth-child(even) h3 {
+  margin-inline: -20px 0px;
+  padding-inline: 37px 20px;
+}
+body.servicios article .txt ul {
+  margin: 0;
+}
+body.servicios article .txt ul li {
+  font-size: 0.7em;
 }
 
 @media screen and (min-width: 971px) {
