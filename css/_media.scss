@@ -116,9 +116,10 @@
     }
 
     /* Articles */
-    section.container{
+    section.container {
         padding-inline: 55px;
     }
+
     article {
         max-width: 950px;
         margin: auto;
@@ -158,11 +159,12 @@
         &.marco {
             margin: auto;
         }
-.column2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-}
+
+        .column2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
     }
 
     .artiFlex {
@@ -216,44 +218,53 @@
 
     /* Footer */
     footer {
-         display: grid;
-            grid-template-columns: repeat(2, minmax(100px, 400px));
-           justify-content: center;
-            gap:  30px 157px;
-            grid-auto-flow: row;
-            grid-template-areas:
-              "logo formulario"
-              "contacto formulario"
-              "logoAbg formulario";
-              padding: 90px 85px 40px;
-              margin-top: 80px;
-          
-          
-          .logo { grid-area: logo; }
-          
-          form { grid-area: formulario; }
-          
-          .contact { grid-area: contacto; }
-          
-          .sublogo { grid-area: logoAbg; }
-          
-        
-        
+        display: grid;
+        grid-template-columns: repeat(2, minmax(100px, 400px));
+        justify-content: center;
+        gap: 30px 157px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "logo formulario"
+            "contacto formulario"
+            "logoAbg formulario";
+        padding: 90px 85px 40px;
+        margin-top: 80px;
+
+
+        .logo {
+            grid-area: logo;
+        }
+
+        form {
+            grid-area: formulario;
+        }
+
+        .contact {
+            grid-area: contacto;
+        }
+
+        .sublogo {
+            grid-area: logoAbg;
+        }
+
+
+
         &::before {
             width: 55px;
-    height: calc(100% - -564px);
-    z-index: 1;
+            height: calc(100% - -564px);
+            z-index: 1;
         }
 
         .logo {
             text-align: left;
             margin-top: 80px;
-            img{
+
+            img {
                 width: 200px;
             }
         }
 
-       
+
 
 
 
@@ -266,11 +277,13 @@
             margin-left: -20px;
             column-gap: 10px;
             position: relative;
-            img{
+
+            img {
                 z-index: 2;
                 position: relative;
             }
-            &::before{
+
+            &::before {
                 content: "";
                 display: block;
                 position: absolute;
@@ -279,9 +292,10 @@
                 background-color: $white;
                 bottom: 50px;
                 right: calc(50% - -137px);
-                
+
             }
-            &::after{
+
+            &::after {
                 content: "";
                 display: block;
                 position: absolute;
@@ -290,7 +304,7 @@
                 background-color: $yellow;
                 top: 0px;
                 left: 72px;
-                
+
             }
         }
     }
@@ -299,5 +313,88 @@
     .ws {
         right: 32px;
         z-index: 9999;
+    }
+
+    /* ASESORIA */
+    body.asesoria {
+        header {
+            .imgHero {
+                height: 570px;
+            }
+
+            .logosImg {
+                max-width: 950px;
+                margin: 0 auto;
+                left: 50%;
+                transform: translateX(-50%);
+
+                .logo {
+                    max-width: 170px;
+                }
+
+                .logoAbog {
+                    display: flex;
+                    gap: 20px;
+
+                    h1 {
+                        display: block;
+                        color: $white;
+                        font-size: 0.7em;
+                    }
+                }
+            }
+        }
+        .container{
+            &::before{        
+                width: 55px;
+                height: calc(100% - 220px);
+                top: -65px;
+                right: 0;
+                left: auto;
+            }
+        }
+
+        .txt {
+            h3 {
+                margin-top: 0;
+            }
+        }
+
+        .part1 {
+            margin-top: 0px;
+            max-width: 630px;
+        }
+
+        .part2 {
+            .column2 {
+                gap: 0;
+
+                .txt {
+                    padding-inline: 60px;
+                    padding-bottom: 100px;
+
+                    &:first-child {
+                        border-right: 1px solid $black;
+                    }
+
+                    h3 {
+                        margin-inline: -60px;
+                        padding-left: 60px;
+
+                        span {
+                            padding-left: 60px;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        footer {
+            margin-top: -20px;
+            &::before{
+                height: calc(100% + 490px);
+            }
+        }
     }
 }

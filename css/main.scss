@@ -505,7 +505,8 @@ footer {
 
     p {
       font-weight: 600;
-      margin-top: 0;
+      margin-top: 13px;
+      font-size: 0.6em;
     }
   }
 }
@@ -514,8 +515,9 @@ footer {
 .ws {
   width: 47px;
   position: fixed;
-  bottom: 20px;
+  bottom: 60px;
   right: 5px;
+  z-index: 100;
 }
 
 .reveal-item {
