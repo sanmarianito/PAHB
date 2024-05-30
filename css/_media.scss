@@ -148,7 +148,7 @@
                     position: absolute;
                     bottom: 0px;
                     z-index: -1;
-                    
+
                 }
 
                 &.block.left::before {
@@ -259,7 +259,7 @@
 
         .logo {
             text-align: left;
-            margin-top: 80px;
+            margin-top: 16px;
 
             img {
                 width: 200px;
@@ -277,8 +277,10 @@
         .sublogo {
             margin: initial;
             margin-left: -20px;
+            margin-bottom: -32px;
             column-gap: 10px;
             position: relative;
+            align-self: end;
 
             img {
                 z-index: 2;
@@ -289,10 +291,10 @@
                 content: "";
                 display: block;
                 position: absolute;
+                background-color: $white;
                 width: 50vw;
                 height: 10px;
-                background-color: $white;
-                bottom: 50px;
+                bottom: 33px;
                 right: calc(50% - -137px);
 
             }
@@ -301,11 +303,11 @@
                 content: "";
                 display: block;
                 position: absolute;
-                width: 2px;
-                height: 126px;
                 background-color: $yellow;
-                top: 0px;
+                width: 2px;
+                height: 79px;
                 left: 72px;
+                bottom: -7px;
 
             }
         }
@@ -327,6 +329,13 @@
 
     /* ASESORIA */
     body.asesoria {
+        &::before {
+            height: 1000px;
+        }
+        &::after {
+            bottom: -976px;
+        }
+
         header {
             .imgHero {
                 height: 570px;
@@ -413,6 +422,15 @@
     /* SERVICIOS */
 
     body.servicios {
+        &::before {
+            height: 1130px;
+        }
+
+        &::after {
+            height: 551px;
+            top: 1050px;
+        }
+
         header {
             background-color: $blanco;
 
@@ -475,13 +493,6 @@
                 background-color: $yellow;
             }
 
-            /* .linesRight {
-                animation: linear lineRg both;
-                animation-timeline: view();
-                animation-range: entry 20dvh cover 30%;
-              } */
-
-            
         }
 
         footer {

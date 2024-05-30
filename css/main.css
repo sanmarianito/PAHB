@@ -10,7 +10,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   margin: 0;
-  height: 100dvb;
+  height: 100%;
 }
 
 strong {
@@ -456,7 +456,7 @@ footer .sublogo p {
 .txt h3 {
   animation: linear lineRg both;
   animation-timeline: view();
-  animation-range: entry 20dvh cover 30%;
+  animation-range: entry 10dvh cover 40%;
 }
 
 @keyframes lineRg {
@@ -857,7 +857,7 @@ body.servicios article .txt ul li {
   }
   footer .logo {
     text-align: left;
-    margin-top: 80px;
+    margin-top: 16px;
   }
   footer .logo img {
     width: 200px;
@@ -868,9 +868,11 @@ body.servicios article .txt ul li {
   footer .sublogo {
     margin: initial;
     margin-left: -20px;
+    margin-bottom: -32px;
     -moz-column-gap: 10px;
          column-gap: 10px;
     position: relative;
+    align-self: end;
   }
   footer .sublogo img {
     z-index: 2;
@@ -880,21 +882,21 @@ body.servicios article .txt ul li {
     content: "";
     display: block;
     position: absolute;
+    background-color: var(--blanco);
     width: 50vw;
     height: 10px;
-    background-color: var(--blanco);
-    bottom: 50px;
+    bottom: 33px;
     right: calc(50% + 137px);
   }
   footer .sublogo::after {
     content: "";
     display: block;
     position: absolute;
-    width: 2px;
-    height: 126px;
     background-color: var(--amarillo);
-    top: 0px;
+    width: 2px;
+    height: 79px;
     left: 72px;
+    bottom: -7px;
   }
   .ws {
     right: 32px;
@@ -907,6 +909,12 @@ body.servicios article .txt ul li {
     gap: 30px;
   }
   /* ASESORIA */
+  body.asesoria::before {
+    height: 1000px;
+  }
+  body.asesoria::after {
+    bottom: -976px;
+  }
   body.asesoria header .imgHero {
     height: 570px;
   }
@@ -966,6 +974,13 @@ body.servicios article .txt ul li {
     height: calc(100% + 490px);
   }
   /* SERVICIOS */
+  body.servicios::before {
+    height: 1130px;
+  }
+  body.servicios::after {
+    height: 551px;
+    top: 1050px;
+  }
   body.servicios header {
     background-color: #ffffff;
   }
@@ -989,13 +1004,6 @@ body.servicios article .txt ul li {
   }
   body.servicios header .logo img {
     width: 160px;
-  }
-  body.servicios article {
-    /* .linesRight {
-        animation: linear lineRg both;
-        animation-timeline: view();
-        animation-range: entry 20dvh cover 30%;
-      } */
   }
   body.servicios article .block::before {
     content: "";
