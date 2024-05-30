@@ -162,7 +162,8 @@ header .imgHero {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 96%);
           clip-path: polygon(0 0, 100% 0, 100% 80%, 0 96%);
 }
-header .imgHero img, header .imgHero video {
+header .imgHero img,
+header .imgHero video {
   width: 100%;
 }
 header .logo {
@@ -449,6 +450,23 @@ footer .sublogo p {
   100% {
     opacity: 1;
     transform: translateY(0px);
+  }
+}
+.txt h2,
+.txt h3 {
+  animation: linear lineRg both;
+  animation-timeline: view();
+  animation-range: entry 20dvh cover 30%;
+}
+
+@keyframes lineRg {
+  0% {
+    opacity: 0;
+    transform: scaleX(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(100%);
   }
 }
 body.asesoria {
@@ -972,6 +990,13 @@ body.servicios article .txt ul li {
   body.servicios header .logo img {
     width: 160px;
   }
+  body.servicios article {
+    /* .linesRight {
+        animation: linear lineRg both;
+        animation-timeline: view();
+        animation-range: entry 20dvh cover 30%;
+      } */
+  }
   body.servicios article .block::before {
     content: "";
     display: block;
@@ -981,6 +1006,9 @@ body.servicios article .txt ul li {
     position: absolute;
     bottom: 0px;
     z-index: -1;
+    animation: linear lineRg both;
+    animation-timeline: view();
+    animation-range: entry 20dvh cover 30%;
   }
   body.servicios article .txt:nth-child(even) .block::before {
     left: 0;

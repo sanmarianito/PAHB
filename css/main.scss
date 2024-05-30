@@ -53,7 +53,6 @@ nav {
       box-sizing: content-box;
       outline: 2px solid #ffc40074;
       transition: 0.5s ease-out all;
-
     }
   }
 
@@ -196,7 +195,8 @@ header {
   .imgHero {
     clip-path: polygon(0 0, 100% 0, 100% 80%, 0 96%);
 
-    img, video {
+    img,
+    video {
       width: 100%;
     }
   }
@@ -284,10 +284,12 @@ article {
         weight: 100;
       }
     }
-ul{
-  padding-left: 20px;
 
-}
+    ul {
+      padding-left: 20px;
+
+    }
+
     p,
     li {
       font-size: 0.8em;
@@ -544,6 +546,30 @@ footer {
     transform: translateY(0px);
   }
 }
+
+
+.txt {
+
+  h2,
+  h3 {
+    animation: linear lineRg both;
+    animation-timeline: view();
+    animation-range: entry 20dvh cover 30%;
+  }
+}
+
+@keyframes lineRg {
+  0% {
+    opacity: 0;
+    transform: scaleX(0%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scaleX(100%);
+  }
+}
+
 
 @import "asesoria";
 @import "servicios";
