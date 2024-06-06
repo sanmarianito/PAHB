@@ -22,8 +22,8 @@
             background-color: $black;
             left: 0;
             z-index: 10;
-            height: 803px;
-            bottom: -742px;
+            height: 563px;
+            top: 872px;
         }
     }
 
@@ -330,10 +330,10 @@
     /* ASESORIA */
     body.asesoria {
         &::before {
-            height: 1000px;
+            height: 1060px;
         }
         &::after {
-            bottom: -976px;
+            top: 1037px;
         }
 
         header {

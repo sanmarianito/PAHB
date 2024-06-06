@@ -728,8 +728,8 @@ body.servicios article .txt ul li {
     background-color: var(--negro);
     left: 0;
     z-index: 10;
-    height: 803px;
-    bottom: -742px;
+    height: 563px;
+    top: 872px;
   }
   /* Menu */
   .nav--hidden {
@@ -962,10 +962,10 @@ body.servicios article .txt ul li {
   }
   /* ASESORIA */
   body.asesoria::before {
-    height: 1000px;
+    height: 1060px;
   }
   body.asesoria::after {
-    bottom: -976px;
+    top: 1037px;
   }
   body.asesoria header .imgHero {
     height: 570px;
