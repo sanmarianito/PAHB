@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 :root {
+  scroll-behavior: smooth;
   --amarillo: #ffc300;
   --amarillo-oscuro: #c79900;
   --negro: #000000;
@@ -10,7 +11,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   margin: 0;
-  height: 100dvb;
+  height: 100%;
 }
 
 strong {
@@ -162,7 +163,8 @@ header .imgHero {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 96%);
           clip-path: polygon(0 0, 100% 0, 100% 80%, 0 96%);
 }
-header .imgHero img, header .imgHero video {
+header .imgHero img,
+header .imgHero video {
   width: 100%;
 }
 header .logo {
@@ -416,7 +418,7 @@ footer .contact .item a:hover {
   color: var(--amarillo);
 }
 footer .sublogo {
-  margin: 40px -20px;
+  margin: 40px -20px 0;
   display: flex;
   -moz-column-gap: 10px;
        column-gap: 10px;
@@ -451,6 +453,39 @@ footer .sublogo p {
     transform: translateY(0px);
   }
 }
+.txt tx {
+  display: inline;
+}
+.txt h2,
+.txt h3 {
+  animation: linear lineRg both;
+  animation-timeline: view();
+  animation-range: entry 10px cover 14vh;
+}
+.txt h2 span, .txt h3 tx {
+  animation: linear txtop both;
+  animation-timeline: view();
+  animation-range: entry 20dvh cover 30dvh;
+}
+@keyframes lineRg {
+  0% {
+    transform: scaleX(0%);
+  }
+  100% {
+    transform: scaleX(100%);
+  }
+}
+@keyframes txtop {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
 body.asesoria {
   /*Articles*/
 }
@@ -839,7 +874,7 @@ body.servicios article .txt ul li {
   }
   footer .logo {
     text-align: left;
-    margin-top: 80px;
+    margin-top: 16px;
   }
   footer .logo img {
     width: 200px;
@@ -850,9 +885,11 @@ body.servicios article .txt ul li {
   footer .sublogo {
     margin: initial;
     margin-left: -20px;
+    margin-bottom: -32px;
     -moz-column-gap: 10px;
          column-gap: 10px;
     position: relative;
+    align-self: end;
   }
   footer .sublogo img {
     z-index: 2;
@@ -862,21 +899,21 @@ body.servicios article .txt ul li {
     content: "";
     display: block;
     position: absolute;
+    background-color: var(--blanco);
     width: 50vw;
     height: 10px;
-    background-color: var(--blanco);
-    bottom: 50px;
+    bottom: 33px;
     right: calc(50% + 137px);
   }
   footer .sublogo::after {
     content: "";
     display: block;
     position: absolute;
-    width: 2px;
-    height: 126px;
     background-color: var(--amarillo);
-    top: 0px;
+    width: 2px;
+    height: 79px;
     left: 72px;
+    bottom: -7px;
   }
   .ws {
     right: 32px;
@@ -889,6 +926,12 @@ body.servicios article .txt ul li {
     gap: 30px;
   }
   /* ASESORIA */
+  body.asesoria::before {
+    height: 1000px;
+  }
+  body.asesoria::after {
+    bottom: -976px;
+  }
   body.asesoria header .imgHero {
     height: 570px;
   }
@@ -948,6 +991,13 @@ body.servicios article .txt ul li {
     height: calc(100% + 490px);
   }
   /* SERVICIOS */
+  body.servicios::before {
+    height: 1130px;
+  }
+  body.servicios::after {
+    height: 551px;
+    top: 1050px;
+  }
   body.servicios header {
     background-color: #ffffff;
   }
@@ -981,6 +1031,9 @@ body.servicios article .txt ul li {
     position: absolute;
     bottom: 0px;
     z-index: -1;
+    animation: linear lineRg both;
+    animation-timeline: view();
+    animation-range: entry 20dvh cover 30%;
   }
   body.servicios article .txt:nth-child(even) .block::before {
     left: 0;

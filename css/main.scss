@@ -7,6 +7,7 @@ $gris: #e6e6e6;
 $blanco: #ffffff;
 
 :root {
+  scroll-behavior: smooth;
   --amarillo: #{$amarillo};
   --amarillo-oscuro: #{$amarillo-oscuro};
   --negro: #{$negro};
@@ -23,7 +24,7 @@ $white: var(--blanco);
 body {
   font-family: "Open Sans", sans-serif;
   margin: 0;
-  height: 100dvb;
+  height: 100%;
 }
 
 strong {
@@ -53,7 +54,6 @@ nav {
       box-sizing: content-box;
       outline: 2px solid #ffc40074;
       transition: 0.5s ease-out all;
-
     }
   }
 
@@ -196,7 +196,8 @@ header {
   .imgHero {
     clip-path: polygon(0 0, 100% 0, 100% 80%, 0 96%);
 
-    img, video {
+    img,
+    video {
       width: 100%;
     }
   }
@@ -284,10 +285,12 @@ article {
         weight: 100;
       }
     }
-ul{
-  padding-left: 20px;
 
-}
+    ul {
+      padding-left: 20px;
+
+    }
+
     p,
     li {
       font-size: 0.8em;
@@ -506,7 +509,7 @@ footer {
   }
 
   .sublogo {
-    margin: 40px -20px;
+    margin: 40px -20px 0;
     display: flex;
     column-gap: 10px;
 
@@ -543,6 +546,47 @@ footer {
     opacity: 1;
     transform: translateY(0px);
   }
+}
+
+
+.txt {
+tx{
+  display: inline;
+}
+  h2,
+  h3 {
+    animation: linear lineRg both;
+    animation-timeline: view();
+    animation-range: entry 10px cover 14vh;
+}
+
+  h2 span, h3 tx{
+    animation: linear txtop both;
+    animation-timeline: view();
+    animation-range: entry 20dvh cover 30dvh;
+  }
+
+@keyframes lineRg {
+  0% {
+    transform: scaleX(0%);
+  }
+
+  100% {
+    transform: scaleX(100%);
+  }
+}
+
+@keyframes txtop {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
 }
 
 @import "asesoria";
