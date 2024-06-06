@@ -199,45 +199,47 @@ header {
 
     img,
     video {
-    img,
-    video {
-      width: 100%;
+
+      img,
+      video {
+        width: 100%;
+      }
     }
-  }
 
-  .logo {
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 225px;
-    z-index: 10;
+    .logo {
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 225px;
+      z-index: 10;
 
-    img {
-      width: 100%;
+      img {
+        width: 100%;
+      }
     }
-  }
 
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: -33px;
-    width: 100%;
-    height: 60px;
-    background-color: $yellow;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
-  }
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -33px;
+      width: 100%;
+      height: 60px;
+      background-color: $yellow;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+    }
 
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: -30px;
-    width: 100%;
-    height: 60px;
-    background-color: $gray;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -30px;
+      width: 100%;
+      height: 60px;
+      background-color: $gray;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 50%);
+    }
   }
 }
 
@@ -292,10 +294,10 @@ article {
     ul {
       padding-left: 20px;
 
-    ul {
-      padding-left: 20px;
+      ul {
+        padding-left: 20px;
 
-    }
+      }
 
     }
 
@@ -558,43 +560,45 @@ footer {
 
 
 .txt {
-tx{
-  display: inline;
-}
+  tx {
+    display: inline;
+  }
+
   h2,
   h3 {
     animation: linear lineRg both;
     animation-timeline: view();
     animation-range: entry 10px cover 14vh;
-}
+  }
 
-  h2 span, h3 tx{
+  h2 span,
+  h3 tx {
     animation: linear txtop both;
     animation-timeline: view();
     animation-range: entry 20dvh cover 30dvh;
   }
 
-@keyframes lineRg {
-  0% {
-    transform: scaleX(0%);
+  @keyframes lineRg {
+    0% {
+      transform: scaleX(0%);
+    }
+
+    100% {
+      transform: scaleX(100%);
+    }
   }
 
-  100% {
-    transform: scaleX(100%);
-  }
-}
+  @keyframes txtop {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
 
-@keyframes txtop {
-  0% {
-    transform: translateY(50px);
-    opacity: 0;
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
   }
-
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
 }
 
 @import "asesoria";
